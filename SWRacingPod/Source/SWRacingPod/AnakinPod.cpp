@@ -65,12 +65,16 @@ void AAnakinPod::Tick(float DeltaTime)
 {
 	// Calculate Thrust
 	const float CurrentAcc = -GetActorRotation().Pitch * DeltaTime * Acceleration;
-	const float NewForwardSpeed = CurrentForwardSpeed + CurrentAcc;
+
+	// Utilisez les valeurs appropriées en fonction de l'état de l'accélération
+	const float NewForwardSpeed = bAccelerating ? (CurrentForwardSpeed + CurrentAcc) : (CurrentForwardSpeed - CurrentAcc);
+
 	CurrentForwardSpeed = FMath::Clamp(NewForwardSpeed, MinSpeed, MaxSpeed);
 
 	// Move the actor locally
 	FVector LocalMove = FVector(CurrentForwardSpeed * DeltaTime, 0.f, 0.f);
 	AddActorLocalOffset(LocalMove, true);
+
 
 	// Calculate rotation deltas
 	FRotator DeltaRotation(0, 0, 0);
@@ -83,7 +87,7 @@ void AAnakinPod::Tick(float DeltaTime)
 
 	// Update actor's location to stay within specified height range
 	FVector ActorLocation = GetActorLocation();
-	ActorLocation.Z = FMath::Clamp(ActorLocation.Z, 50.f, 600.f);  // Limit height between 100 and 600
+	ActorLocation.Z = FMath::Clamp(ActorLocation.Z, 50.f, 600.f);  // Limit height between 50 and 600
 	SetActorLocation(ActorLocation);
 
 	// Debug messages
@@ -91,6 +95,7 @@ void AAnakinPod::Tick(float DeltaTime)
 	GEngine->AddOnScreenDebugMessage(1, 0.f, FColor::Yellow, FString::Printf(TEXT("Actor Location: %s"), *ActorLocation.ToString()));
 	GEngine->AddOnScreenDebugMessage(2, 0.f, FColor::Blue, FString::Printf(TEXT("Roll Speed: %f"), CurrentRollSpeed));
 	GEngine->AddOnScreenDebugMessage(3, 0.f, FColor::Red, FString::Printf(TEXT("Pitch Speed: %f"), CurrentPitchSpeed));
+	GEngine->AddOnScreenDebugMessage(4, 0.f, FColor::Purple, FString::Printf(TEXT("Current Acc: %f"), CurrentAcc));
 
 	Super::Tick(DeltaTime);
 }
@@ -116,5 +121,22 @@ void AAnakinPod::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent
 	PlayerInputComponent->BindAxis("LookUp", this, &AAnakinPod::ProcessMouseYInput);
 	PlayerInputComponent->BindAxis("MoveRight", this, &AAnakinPod::ProcessKeyRoll);
 	PlayerInputComponent->BindAxis("MoveForward", this, &AAnakinPod::ProcessKeyPitch);
+
+	PlayerInputComponent->BindAction("Accelerate", IE_Pressed, this, &AAnakinPod::StartAccelerating);
+	PlayerInputComponent->BindAction("Accelerate", IE_Released, this, &AAnakinPod::StopAccelerating);
+}
+
+void AAnakinPod::StartAccelerating()
+{
+	bAccelerating = true;
+	MinSpeed = 3000.f;
+	MaxSpeed = 4000.f;
+}
+
+void AAnakinPod::StopAccelerating()
+{
+	bAccelerating = false;
+	MinSpeed = 500.f;
+	MaxSpeed = 1000.f;
 }
 
