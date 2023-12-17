@@ -63,25 +63,36 @@ void AAnakinPod::BeginPlay()
 // Called every frame
 void AAnakinPod::Tick(float DeltaTime)
 {
-	//Calculate Thrust
+	// Calculate Thrust
 	const float CurrentAcc = -GetActorRotation().Pitch * DeltaTime * Acceleration;
 	const float NewForwardSpeed = CurrentForwardSpeed + CurrentAcc;
 	CurrentForwardSpeed = FMath::Clamp(NewForwardSpeed, MinSpeed, MaxSpeed);
 
-	const FVector LocalMove = FVector(CurrentForwardSpeed * DeltaTime, 0.f, 0.f);
+	// Move the actor locally
+	FVector LocalMove = FVector(CurrentForwardSpeed * DeltaTime, 0.f, 0.f);
 	AddActorLocalOffset(LocalMove, true);
 
+	// Calculate rotation deltas
 	FRotator DeltaRotation(0, 0, 0);
 	DeltaRotation.Roll = CurrentRollSpeed * DeltaTime;
 	DeltaRotation.Yaw = CurrentYawSpeed * DeltaTime;
 	DeltaRotation.Pitch = CurrentPitchSpeed * DeltaTime;
 
+	// Add local rotation
 	AddActorLocalRotation(DeltaRotation);
 
+	// Update actor's location to stay within specified height range
+	FVector ActorLocation = GetActorLocation();
+	ActorLocation.Z = FMath::Clamp(ActorLocation.Z, 50.f, 600.f);  // Limit height between 100 and 600
+	SetActorLocation(ActorLocation);
+
+	// Debug messages
 	GEngine->AddOnScreenDebugMessage(0, 0.f, FColor::Green, FString::Printf(TEXT("ForwardSpeed: %f"), CurrentForwardSpeed));
+	GEngine->AddOnScreenDebugMessage(1, 0.f, FColor::Yellow, FString::Printf(TEXT("Actor Location: %s"), *ActorLocation.ToString()));
+	GEngine->AddOnScreenDebugMessage(2, 0.f, FColor::Blue, FString::Printf(TEXT("Roll Speed: %f"), CurrentRollSpeed));
+	GEngine->AddOnScreenDebugMessage(3, 0.f, FColor::Red, FString::Printf(TEXT("Pitch Speed: %f"), CurrentPitchSpeed));
 
 	Super::Tick(DeltaTime);
-
 }
 
 void AAnakinPod::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)
