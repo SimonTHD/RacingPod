@@ -1,14 +1,8 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "AnakinPod.h"
 
-// Sets default values
 AAnakinPod::AAnakinPod()
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
 }
 
 void AAnakinPod::ProcessKeyPitch(float Rate)
@@ -53,44 +47,35 @@ void AAnakinPod::ProcessPitch(float Value)
 	CurrentPitchSpeed = FMath::FInterpTo(CurrentPitchSpeed, TargetPitchSpeed, GetWorld()->GetDeltaSeconds(), 2.f);
 }
 
-// Called when the game starts or when spawned
 void AAnakinPod::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
-// Called every frame
 void AAnakinPod::Tick(float DeltaTime)
 {
-	// Calculate Thrust
 	const float CurrentAcc = -GetActorRotation().Pitch * DeltaTime * Acceleration;
 
-	// Utilisez les valeurs appropriées en fonction de l'état de l'accélération
 	const float NewForwardSpeed = bAccelerating ? (CurrentForwardSpeed + CurrentAcc) : (CurrentForwardSpeed - CurrentAcc);
 
 	CurrentForwardSpeed = FMath::Clamp(NewForwardSpeed, MinSpeed, MaxSpeed);
 
-	// Move the actor locally
 	FVector LocalMove = FVector(CurrentForwardSpeed * DeltaTime, 0.f, 0.f);
 	AddActorLocalOffset(LocalMove, true);
 
-
-	// Calculate rotation deltas
 	FRotator DeltaRotation(0, 0, 0);
 	DeltaRotation.Roll = CurrentRollSpeed * DeltaTime;
 	DeltaRotation.Yaw = CurrentYawSpeed * DeltaTime;
 	DeltaRotation.Pitch = CurrentPitchSpeed * DeltaTime;
 
-	// Add local rotation
 	AddActorLocalRotation(DeltaRotation);
 
-	// Update actor's location to stay within specified height range
 	FVector ActorLocation = GetActorLocation();
-	ActorLocation.Z = FMath::Clamp(ActorLocation.Z, 50.f, 600.f);  // Limit height between 50 and 600
+	ActorLocation.Z = FMath::Clamp(ActorLocation.Z, 50.f, 600.f);  
 	SetActorLocation(ActorLocation);
 
-	// Debug messages
+
 	GEngine->AddOnScreenDebugMessage(0, 0.f, FColor::Green, FString::Printf(TEXT("ForwardSpeed: %f"), CurrentForwardSpeed));
 	GEngine->AddOnScreenDebugMessage(1, 0.f, FColor::Yellow, FString::Printf(TEXT("Actor Location: %s"), *ActorLocation.ToString()));
 	GEngine->AddOnScreenDebugMessage(2, 0.f, FColor::Blue, FString::Printf(TEXT("Roll Speed: %f"), CurrentRollSpeed));
@@ -104,15 +89,15 @@ void AAnakinPod::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiv
 {
 	Super::NotifyHit(MyComp, Other, OtherComp, bSelfMoved, HitLocation, HitNormal, NormalImpulse, Hit);
 
-	//Deflect along surface
-	const FRotator CurrentRotation = GetActorRotation();
+	/*const FRotator CurrentRotation = GetActorRotation();
 	SetActorRotation(FQuat::Slerp(CurrentRotation.Quaternion(), HitNormal.ToOrientationQuat(), 0.025f));
-	
-	//Slow Down
-	CurrentForwardSpeed = FMath::FInterpTo(CurrentForwardSpeed, MinSpeed, GetWorld()->GetDeltaSeconds(), 5.f);
+
+	CurrentForwardSpeed = FMath::FInterpTo(CurrentForwardSpeed, MinSpeed, GetWorld()->GetDeltaSeconds(), 5.f);*/
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Collision détectée!"));
+
+	Destroy();
 }
 
-// Called to bind functionality to input
 void AAnakinPod::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
