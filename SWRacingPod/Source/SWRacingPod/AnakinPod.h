@@ -17,7 +17,7 @@ public:
 	UPROPERTY(EditAnyWhere, Category = "Flight")
 		float MaxSpeed{ 1000.f };
 	UPROPERTY(EditAnyWhere, Category = "Flight")
-		float MinSpeed{ 500.f };
+		float MinSpeed{ 0.f };
 
 	UPROPERTY(EditAnyWhere, Category = "Flight")
 		float RollRateMultiplier{ 200.f };
@@ -25,7 +25,7 @@ public:
 		float PitchRateMultiplier{ 200.f };
 
 	UPROPERTY(VisibleAnyWhere, Category = "Flight")
-		float CurrentForwardSpeed{ 500.f };
+		float CurrentForwardSpeed{ 0.f };
 
 	float CurrentYawSpeed;
 	float CurrentPitchSpeed;

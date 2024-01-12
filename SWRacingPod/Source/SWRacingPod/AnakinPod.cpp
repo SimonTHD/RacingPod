@@ -89,11 +89,11 @@ void AAnakinPod::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiv
 {
 	Super::NotifyHit(MyComp, Other, OtherComp, bSelfMoved, HitLocation, HitNormal, NormalImpulse, Hit);
 
-	/*const FRotator CurrentRotation = GetActorRotation();
+	const FRotator CurrentRotation = GetActorRotation();
 	SetActorRotation(FQuat::Slerp(CurrentRotation.Quaternion(), HitNormal.ToOrientationQuat(), 0.025f));
 
-	CurrentForwardSpeed = FMath::FInterpTo(CurrentForwardSpeed, MinSpeed, GetWorld()->GetDeltaSeconds(), 5.f);*/
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Collision détectée!"));
+	CurrentForwardSpeed = FMath::FInterpTo(CurrentForwardSpeed, MinSpeed, GetWorld()->GetDeltaSeconds(), 5.f);
+	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Collision détectée!"));
 
 	Destroy();
 }
@@ -116,6 +116,7 @@ void AAnakinPod::StartAccelerating()
 	bAccelerating = true;
 	MinSpeed = 3000.f;
 	MaxSpeed = 4000.f;
+	CurrentForwardSpeed = 500.f;
 }
 
 void AAnakinPod::StopAccelerating()
