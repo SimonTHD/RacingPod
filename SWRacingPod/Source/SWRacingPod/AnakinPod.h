@@ -24,8 +24,10 @@ public:
 	UPROPERTY(EditAnyWhere, Category = "Flight")
 		float PitchRateMultiplier{ 200.f };
 
-	UPROPERTY(VisibleAnyWhere, Category = "Flight")
-		float CurrentForwardSpeed{ 0.f };
+	/*UPROPERTY(VisibleAnyWhere, Category = "Flight")
+		float CurrentForwardSpeed{ 0.f };*/
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Flight")
+		float CurrentForwardSpeed = 0.f;
 
 	float CurrentYawSpeed;
 	float CurrentPitchSpeed;
