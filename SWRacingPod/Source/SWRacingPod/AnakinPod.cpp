@@ -114,15 +114,15 @@ void AAnakinPod::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent
 void AAnakinPod::StartAccelerating()
 {
 	bAccelerating = true;
-	MinSpeed = 3000.f;
-	MaxSpeed = 4000.f;
+	MinSpeed = 9000.f;
+	MaxSpeed = 14000.f;
 	CurrentForwardSpeed = 500.f;
 }
 
 void AAnakinPod::StopAccelerating()
 {
 	bAccelerating = false;
-	MinSpeed = 500.f;
-	MaxSpeed = 1000.f;
+	MinSpeed = 1500.f;
+	MaxSpeed = 3000.f;
 }
 
