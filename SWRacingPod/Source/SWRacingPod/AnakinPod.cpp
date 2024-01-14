@@ -72,7 +72,7 @@ void AAnakinPod::Tick(float DeltaTime)
 	AddActorLocalRotation(DeltaRotation);
 
 	FVector ActorLocation = GetActorLocation();
-	ActorLocation.Z = FMath::Clamp(ActorLocation.Z, 50.f, 600.f);  
+	ActorLocation.Z = FMath::Clamp(ActorLocation.Z, -10000.f, 2000.f);  
 	SetActorLocation(ActorLocation);
 
 
