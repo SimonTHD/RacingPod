@@ -1,7 +1,7 @@
 
 # Star Wars Podracer Remake
 
-![Star Wars Podracer Banner](https://image-cdn.essentiallysports.com/wp-content/uploads/20230125104024/Design-vivid-racetracks-with-memorable-settings-in-Star-Wars-Podracer-Remake.jpeg?width=640) 
+![Star Wars Podracer Banner]([https://image-cdn.essentiallysports.com/wp-content/uploads/20230125104024/Design-vivid-racetracks-with-memorable-settings-in-Star-Wars-Podracer-Remake.jpeg?width=640](https://www.google.com/url?sa=i&url=https%3A%2F%2Fstore.steampowered.com%2Fapp%2F808910%2FSTAR_WARS_Episode_I_Racer%2F%3Fl%3Dfrench&psig=AOvVaw06CYtc_yHRQxHqRyUTlHzs&ust=1722328469534000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCPDGy9bry4cDFQAAAAAdAAAAABAE)) 
 
 ## Description
 
@@ -130,7 +130,7 @@ Voici quelques fonctionnalités prévues pour les futures mises à jour :
 
 Ce projet est développé par une équipe de passionnés de jeux vidéo et de Star Wars. Nous tenons à remercier tous ceux qui ont contribué à rendre ce projet possible.
 
-- **Lead Developer :** [Votre Nom](https://github.com/SimonTHD)
+- **Lead Developer :** [Simon THIBAUD](https://github.com/SimonTHD)
 - **Contributeurs :** [Liste des Contributeurs](https://github.com/SimonTHD/RacingPod/graphs/contributors)
 
 
