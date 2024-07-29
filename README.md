@@ -1,144 +1,126 @@
-
 # Star Wars Podracer Remake
 
-![Star Wars Podracer Banner]([https://image-cdn.essentiallysports.com/wp-content/uploads/20230125104024/Design-vivid-racetracks-with-memorable-settings-in-Star-Wars-Podracer-Remake.jpeg?width=640](https://www.google.com/url?sa=i&url=https%3A%2F%2Fstore.steampowered.com%2Fapp%2F808910%2FSTAR_WARS_Episode_I_Racer%2F%3Fl%3Dfrench&psig=AOvVaw06CYtc_yHRQxHqRyUTlHzs&ust=1722328469534000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCPDGy9bry4cDFQAAAAAdAAAAABAE)) 
+![Star Wars Podracer Banner](https://image-cdn.essentiallysports.com/wp-content/uploads/20230125104024/Design-vivid-racetracks-with-memorable-settings-in-Star-Wars-Podracer-Remake.jpeg?width=640)
 
 ## Description
 
-Bienvenue sur le projet **Star Wars Podracer Remake**! Ce projet est une re-création moderne du célèbre jeu de course *Star Wars Episode I: Racer*, initialement sorti sur Nintendo 64, et maintenant refait en utilisant l'Unreal Engine 5.3 pour offrir une expérience de jeu immersive et visuellement impressionnante.
+Welcome to the **Star Wars Podracer Remake** project! This project is a modern re-creation of the classic racing game *Star Wars Episode I: Racer*, initially released on the Nintendo 64. It is now being remade using Unreal Engine 5.3 to deliver an immersive and visually stunning gaming experience.
 
-**Caractéristiques principales :**
+**Key Features:**
 
-- **Graphismes de nouvelle génération :** Profitez de paysages époustouflants et de vaisseaux recréés avec un niveau de détail incroyable grâce à l'Unreal Engine 5.3.
-- **Physique réaliste :** Des courses à haute vitesse avec une physique réaliste qui reproduisent fidèlement les sensations de pilotage des pod racers.
-- **Nouveaux circuits :** Découvrez des circuits classiques revisités et de tout nouveaux parcours dans l'univers de Star Wars.
-- **Optimisé pour PC et Consoles :** Profitez d'une expérience fluide et sans accroc sur différentes plateformes.
+- **Next-Generation Graphics:** Enjoy breathtaking landscapes and meticulously recreated podracers with incredible detail, powered by Unreal Engine 5.3.
+- **Realistic Physics:** Experience high-speed races with realistic physics that faithfully replicate the sensations of piloting podracers.
+- **New Tracks:** Discover revamped classic tracks and brand-new courses set in the Star Wars universe.
+- **Optimized for PC and Consoles:** Enjoy a smooth and seamless experience across different platforms.
 
-## Table des matières
+## Table of Contents
 
-- [À propos du Projet](#à-propos-du-projet)
-- [Fonctionnalités](#fonctionnalités)
-- [Captures d'Écran](#captures-décran)
+- [About the Project](#about-the-project)
+- [Features](#features)
+- [Screenshots](#screenshots)
 - [Installation](#installation)
-- [Comment Jouer](#comment-jouer)
-- [Technologies Utilisées](#technologies-utilisées)
-- [Contribuer](#contribuer)
-- [Feuille de Route](#feuille-de-route)
-- [Crédits](#crédits)
-- [Remerciements](#remerciements)
+- [How to Play](#how-to-play)
+- [Technologies Used](#technologies-used)
+- [Contributing](#contributing)
+- [Roadmap](#roadmap)
+- [Credits](#credits)
+- [Acknowledgments](#acknowledgments)
 
-## À propos du Projet
+## About the Project
 
-Ce projet est né de la passion de l'équipe pour le jeu original et du désir de donner aux fans une version modernisée du jeu classique. L'objectif principal est de préserver l'âme de l'original tout en ajoutant de nouvelles fonctionnalités et des améliorations graphiques qui tirent parti des capacités de l'Unreal Engine 5.3.
+This project was born out of our team's passion for the original game and our desire to provide fans with a modernized version of the classic game. Our primary goal is to preserve the original game's soul while adding new features and graphical enhancements that leverage the capabilities of Unreal Engine 5.3.
 
-Le projet est toujours en cours de développement, et nous accueillons toute contribution de la communauté pour nous aider à l'améliorer et à le peaufiner.
+The project is still in active development, and we welcome any contributions from the community to help us improve and refine it.
 
-## Fonctionnalités
+## Features
 
-- **Gameplay original :** Replongez dans les courses frénétiques à travers l'univers de Star Wars.
-- **Graphismes modernes :** Modélisation détaillée des véhicules et des environnements.
-- **Expérience immersive :** Effets sonores et musique authentiques inspirés de l'univers Star Wars.
-- **Personnalisation des Pods :** Améliorez et personnalisez votre pod pour le rendre unique.
+- **Original Gameplay:** Dive back into the frantic races across the Star Wars universe.
+- **Modern Graphics:** Detailed modeling of vehicles and environments.
+- **Immersive Experience:** Authentic sound effects and music inspired by the Star Wars universe.
+- **Pod Customization:** Upgrade and customize your podracer to make it unique.
 
-## Captures d'Écran
+## Screenshots
 
-> Vous pouvez inclure ici quelques captures d'écran de votre jeu pour montrer le rendu graphique et les circuits. Voici un exemple de mise en page :
+> You can include some screenshots of your game here to showcase the graphics and tracks. Here is an example layout:
 
-| Menu Principal                                  | Course dans le Canyon                              | Écran de Victoire                                 |
-|------------------------------------------------|--------------------------------------------------|--------------------------------------------------|
-| ![Menu Principal](link_vers_image_menu)        | ![Course dans le Canyon](link_vers_image_course)  | ![Écran de Victoire](link_vers_image_victoire)   |
+| Main Menu                                   | Canyon Race                                   | Victory Screen                                  |
+|---------------------------------------------|-----------------------------------------------|-------------------------------------------------|
+| ![Main Menu](link_to_image_menu)            | ![Canyon Race](link_to_image_race)            | ![Victory Screen](link_to_image_victory)        |
 
 ## Installation
 
-Pour cloner et exécuter ce projet localement, suivez les étapes ci-dessous :
+To clone and run this project locally, follow the steps below:
 
-1. **Cloner le dépôt :**
+1. **Clone the Repository:**
 
    ```bash
    git clone https://github.com/SimonTHD/RacingPod.git
    cd RacingPod
    ```
 
-2. **Installation des dépendances :**
+2. **Install Dependencies :**
 
-   Assurez-vous d'avoir [Unreal Engine 5.3](https://www.unrealengine.com/en-US/download) installé sur votre machine. Ouvrez le projet dans Unreal Engine et compilez les fichiers nécessaires.
+   Ensure you have [Unreal Engine 5.3](https://www.unrealengine.com/en-US/download)  installed on your machine. Open the project in Unreal Engine and compile the necessary files.
 
-3. **Lancement du jeu :**
+4. **Launch the Game :**
 
-   Une fois la compilation terminée, lancez le jeu depuis l'éditeur Unreal ou exportez-le comme application exécutable.
+   Once the compilation is complete, launch the game from the Unreal Editor or export it as an executable application.
 
-## Comment Jouer
+## How to Play
 
-### Contrôles de Base
+### Basic Controls
+- **Accelerate**: W or Up Arrow key
+- **Brake**: S or Down Arrow key
+- **Turn Left**: A or Left Arrow key
+- **Turn Right**: D or Right Arrow key
+- **Use Boost**: Spacebar
+- **Repair Pod**: R
 
-- **Accélérer :** W ou la touche fléchée vers le haut
-- **Freiner :** S ou la touche fléchée vers le bas
-- **Tourner à gauche :** A ou la touche fléchée gauche
-- **Tourner à droite :** D ou la touche fléchée droite
-- **Utiliser le boost :** Barre d'espace
-- **Réparer le pod :** R
+### Game Modes
+- **Career Mode**: Follow the story by participating in races on various tracks.
+- **Arcade Mode**: Choose a track and a pod, and jump into a quick race.
 
-### Modes de Jeu
+## Technologies Used
+- **Unreal Engine 5.3**: For next-generation graphics and stunning visual effects.
+- **Blender**: For modeling and texturing the pods and environments.
+- **Photoshop**: For creating custom textures and UI.
+- **FMOD**: Advanced audio management for an immersive sound experience.
+- **C++**: Programming game mechanics and gameplay logic.
 
-1. **Mode Carrière :** Suivez l'histoire en participant à des courses sur différents circuits.
-3. **Mode Arcade :** Choisissez un circuit et un pod, et lancez-vous dans une course rapide.
+## Contributing
+We welcome all contributions to improve this project! Here’s how you can help:
 
-## Technologies Utilisées
+1. **Fork the Project**: Click on the "Fork" button at the top right of the GitHub page.
+2. **Create a Branch**:
+    ```bash
+    git checkout -b feature/AmazingFeature
+    ```
+3. **Commit Your Changes**:
+    ```bash
+    git commit -m 'Add some amazing feature'
+    ```
+4. **Push to the Branch**:
+    ```bash
+    git push origin feature/AmazingFeature
+    ```
+5. **Open a Pull Request**: Submit your pull request for review.
 
-- **Unreal Engine 5.3 :** Pour des graphismes de nouvelle génération et des effets visuels impressionnants.
-- **Blender :** Modélisation et texturation des pods et des environnements.
-- **Photoshop :** Création de textures et d'UI personnalisées.
-- **FMOD :** Gestion avancée de l'audio pour une expérience sonore immersive.
-- **C++ :** Programmation des mécaniques de jeu et de la logique du gameplay.
+## Roadmap
+Here are some features planned for future updates:
+- [ ] Addition of new tracks and environments.
+- [ ] Improvement of AI for opponents.
+- [ ] Integration of new customization features.
+- [ ] Enhancement of multiplayer mode.
+- [ ] Performance optimization for next-gen consoles.
 
-## Contribuer
-
-Nous accueillons toutes les contributions pour améliorer ce projet! Voici comment vous pouvez aider :
-
-1. **Forker le Projet :** Cliquez sur le bouton "Fork" en haut à droite de la page GitHub.
-2. **Créer une Branche :** 
-
-   ```bash
-   git checkout -b feature/AmazingFeature
-   ```
-
-3. **Commit vos Changements :**
-
-   ```bash
-   git commit -m 'Ajout d'une fonctionnalité incroyable'
-   ```
-
-4. **Pousser la Branche :**
-
-   ```bash
-   git push origin feature/AmazingFeature
-   ```
-
-5. **Ouvrir une Pull Request :** Envoyez-nous une pull request pour examen.
-
-## Feuille de Route
-
-Voici quelques fonctionnalités prévues pour les futures mises à jour :
-
-- [ ] Ajout de nouveaux circuits et environnements.
-- [ ] Amélioration de l'IA des adversaires.
-- [ ] Intégration de nouvelles fonctionnalités de personnalisation.
-- [ ] Amélioration du mode multijoueur.
-- [ ] Optimisation des performances pour les consoles de nouvelle génération.
-
-## Crédits
-
-Ce projet est développé par une équipe de passionnés de jeux vidéo et de Star Wars. Nous tenons à remercier tous ceux qui ont contribué à rendre ce projet possible.
+## Credits
+This project is developed by a team of video game and Star Wars enthusiasts. We would like to thank everyone who contributed to making this project possible.
 
 - **Lead Developer :** [Simon THIBAUD](https://github.com/SimonTHD)
 - **Contributeurs :** [Liste des Contributeurs](https://github.com/SimonTHD/RacingPod/graphs/contributors)
 
+## Acknowledgments
+A big thank you to all the fans of Star Wars Episode I: Racer who have supported this project. Your enthusiasm and feedback are essential to our success. We hope you enjoy this remake as much as we enjoyed creating it.
 
-## Remerciements
-
-Un grand merci à tous les fans de *Star Wars Episode I: Racer* qui ont soutenu ce projet. Votre enthousiasme et vos retours sont essentiels à notre réussite. Nous espérons que vous aimerez ce remake autant que nous avons aimé le créer.
-
----
-
-
-Pour toute question ou suggestion, n'hésitez pas à nous contacter via nos réseaux sociaux ou à ouvrir une issue sur GitHub.
+For any questions or suggestions, feel free to contact us via our social media channels or open an issue on GitHub.
+Ce projet est développé par une équipe de passionnés de jeux vidéo et de Star Wars. Nous tenons à remercier tous ceux qui ont contribué à rendre ce projet possible.
